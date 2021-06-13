@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  background-color: #eff8f0;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+input,
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  outline: transparent;
+}
+
+#button {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  background-color: #4caf4f;
+}
+
+#input-search {
+  position: absolute;
+  width: 212px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 66px;
+  color: #000;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: #aacaab;
+}
+
+#button::before,
+#button::after {
+  content: "";
+  width: 4px;
+  height: 16px;
+  background-color: #4caf4f;
+  position: absolute;
+  left: 26px;
+  top: 22px;
+  transform: rotateZ(-43deg);
+  box-shadow: 0 0 0 1px #eff8f0;
+}
+
+
+form.active{
+  width: 350px;
+}
+
+form.active #button{
+  width: 50px;
+  height: 50px;
+  top: 8px;
+  left: 8px;
+}
+
+form.active #button:before,
+form.active #button:after{
+  left: 23px;
+  top: 18px;
+}
+
+form.active #button:after{
+  animation: rotateRight 0.2s ease 0.3s forwards;
+}
+
+@keyframes rotateRight{
+  0%{transform: rotate(-43deg);}
+  100%{transform: rotate(43deg);}
+}
